@@ -11,16 +11,16 @@ import Tab from "../components/Tab/index";
 export default class App extends Component {
   render() {
     return (
-      <div>
-        <Router>
+      <Router>
+        <div>
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route path="/lesson" component={Lesson}/>
             <Route path="/profile" component={Profile}/>
           </Switch>
-        </Router>
-        <Tab/>
-      </div>
+          <Tab/>
+        </div>
+      </Router>
     )
   }
 }
