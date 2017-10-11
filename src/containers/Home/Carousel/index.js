@@ -7,18 +7,23 @@ let sliders = [
   'http://www.zhufengpeixun.cn/themes/jianmo2/images/react.png'
 ];
 export default class Carousel extends Component {
+  constructor(){
+    super();
+    this.state = {index:0};
+  }
   render() {
     let options = {
       continuous: true,
       auto:1000,
+      disableScroll:true,
       //每轮播一次会调用此回调方法并传入最新的索引
       callback:(index)=>{
-
+        this.setState({index});
       }
     };
     return (
       <div className="sliders">
-        <ReactSwipe className="carousel" swipeOptions={}>
+        <ReactSwipe className="carousel" swipeOptions={options}>
           {
             sliders.map((item, index) => (
               <div key={index}><img src={item}/></div>
@@ -28,7 +33,7 @@ export default class Carousel extends Component {
         <div className="dots">
           {
             sliders.map((item, index) => (
-              <span key={index}></span>
+              <span className={this.state.index == index?"active":""} key={index}></span>
             ))
           }
         </div>
