@@ -7,9 +7,15 @@ export default class HomeHeader extends Component {
       <div className="header">
         <img src={logo}/>
         <div>
-          <i className="iconfont icon-ulist"></i>
+          <i className="iconfont icon-uilist"></i>
           <i className="iconfont icon-guanbi"></i>
         </div>
+        <ul className="menu-list">
+          <li>Node课程培训</li>
+          <li>HTML5课程培训</li>
+          <li>视频课程</li>
+          <li>文档课件</li>
+        </ul>
       </div>
     )
   }
