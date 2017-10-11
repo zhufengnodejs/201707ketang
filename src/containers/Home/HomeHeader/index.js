@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import logo from '../../../images/logo.png';
 import './index.less'
+import {CSSTransition,TransitionGroup} from 'react-transition-group';
 export default class HomeHeader extends Component {
   constructor(){
     super();
@@ -15,14 +16,19 @@ export default class HomeHeader extends Component {
           this.state.showMenu?<i className="iconfont icon-guanbi"></i>:<i className="iconfont icon-uilist"></i>
         }
         </div>
+        <TransitionGroup>
         {
-          this.state.showMenu? <ul className="menu-list">
+          this.state.showMenu? <CSSTransition
+            classNames="fade"
+            timeout={500}
+          ><ul className="menu-list">
             <li>Node课程培训</li>
             <li>HTML5课程培训</li>
             <li>视频课程</li>
             <li>文档课件</li>
-          </ul>:null
+          </ul></CSSTransition>:null
         }
+        </TransitionGroup>
       </div>
     )
   }
