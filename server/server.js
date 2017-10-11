@@ -21,6 +21,13 @@ app.get('/sliders',function(req,res){
   res.json(sliders);
 });
 app.get('/lessons',function(req,res){
-  res.json(lessons);
+  let {offset,limit } = req.query;
+  let clonedLessons = JSON.parse(JSON.stringify(lessons));
+  let list = clonedLessons.list;
+  for(let i=1;i<=list.length;i++){
+    let lesson = list[i-1];
+    lesson.name = (i+parseInt(offset))+'.'+lesson.name;
+  }
+  res.json(clonedLessons);
 });
 

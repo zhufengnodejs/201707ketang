@@ -17,7 +17,16 @@ export default {
       dispatch({
         type:types.FETCH_LESSONS
       });
-      getLessons().then(lessons=>{
+      let {
+        home:{
+          lessons:{
+            offset,
+            limit
+          }
+        }
+      } = getState();//获取的是完整的状态
+
+      getLessons(offset,limit).then(lessons=>{
         dispatch({
           type:types.FETCH_LESSONS_SUCCESS,
           lessons

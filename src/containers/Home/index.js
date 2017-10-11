@@ -16,13 +16,18 @@ export default class Home extends Component {
       this.props.fetchLessons();
     }
   }
+  loadMore = ()=>{
+    this.props.fetchLessons();
+  }
   render() {
     return (
       <div>
         <HomeHeader/>
         <div className="container">
           <Carousel sliders={this.props.sliders}/>
-          <LessonList lessons = {this.props.lessons}/>
+          <LessonList
+            loadMore = {this.loadMore}
+            lessons = {this.props.lessons}/>
         </div>
       </div>
     )

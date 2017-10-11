@@ -17,6 +17,11 @@ export default class LessonList extends Component {
             </li>
           ))
         }
+        <li
+          onClick={this.props.loadMore}
+          className="load-more">
+          加载更多
+        </li>
       </ul>
     )
   }
