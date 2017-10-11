@@ -4,6 +4,7 @@ import './index.less'
 import Carousel from "./Carousel/index";
 import {connect} from 'react-redux';
 import actions from '../../store/actions/home';
+import LessonList from "./LessonList/index";
 @connect(
   state => state.home,
   actions
@@ -21,6 +22,7 @@ export default class Home extends Component {
         <HomeHeader/>
         <div className="container">
           <Carousel sliders={this.props.sliders}/>
+          <LessonList lessons = {this.props.lessons}/>
         </div>
       </div>
     )
