@@ -3,3 +3,7 @@ import {get} from './index';
 export function getSliders(){
    return get('/sliders');
 }
+//用来获取课程列表
+export function getLessons(){
+  return get('/lessons');
+}

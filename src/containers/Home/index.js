@@ -12,6 +12,7 @@ export default class Home extends Component {
   componentWillMount(){
     if(this.props.sliders.length == 0){
       this.props.fetchSliders();
+      this.props.fetchLessons();
     }
   }
   render() {

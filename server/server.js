@@ -3,6 +3,7 @@ let app = express();
 app.listen(3000);
 //获取真实的轮播图数据
 let sliders = require('./mock/sliders');
+let lessons = require('./mock/lessons');
 app.use(function(req,res,next){
   //如果客户端要向服务器发送cookie的话，绝不对写*
   res.header('Access-Control-Allow-Origin',"http://localhost:8080");
@@ -19,3 +20,7 @@ app.use(function(req,res,next){
 app.get('/sliders',function(req,res){
   res.json(sliders);
 });
+app.get('/lessons',function(req,res){
+  res.json(lessons);
+});
+

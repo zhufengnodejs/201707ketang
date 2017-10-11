@@ -14,6 +14,22 @@ export default function (state = initState, action) {
   switch (action.type) {
     case types.FETCH_SLIDERS:
       return {...state, sliders: action.sliders};
+    case types.FETCH_LESSONS://开始获取数据
+      return {
+        ...state,
+        lessons:{
+          ...state.lessons,
+          loading:true
+        }
+      }
+    case types.FETCH_LESSONS_SUCCESS://数据获取完成
+      return {...state, lessons: {
+        ...state.lessons,
+        list:[...state.lessons.list,...action.lessons.list],
+        hasMore:action.lessons.hasMore,
+        offset:state.lessons.offset + action.lessons.list.length,
+        loading:false //加载完成
+      }};
     default:
       return state;
   }

@@ -1,4 +1,4 @@
-import {getSliders} from '../../api/home';
+import {getSliders,getLessons} from '../../api/home';
 import * as types from '../action-types';
 export default {
   //获取轮播图
@@ -11,5 +11,18 @@ export default {
        });
      })
    }
+  },
+  fetchLessons(){
+    return (dispatch,getState)=>{
+      dispatch({
+        type:types.FETCH_LESSONS
+      });
+      getLessons().then(lessons=>{
+        dispatch({
+          type:types.FETCH_LESSONS_SUCCESS,
+          lessons
+        });
+      })
+    }
   }
 }
