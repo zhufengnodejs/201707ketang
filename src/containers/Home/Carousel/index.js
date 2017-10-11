@@ -18,16 +18,19 @@ export default class Carousel extends Component {
     };
     return (
       <div className="sliders">
-        <ReactSwipe className="carousel" swipeOptions={options}>
-          {
-            sliders.map((item, index) => (
-              <div key={index}><img src={item}/></div>
-            ))
-          }
-        </ReactSwipe>
+        {
+          this.props.sliders.length>0? <ReactSwipe className="carousel" swipeOptions={options}>
+            {
+              this.props.sliders.map((item, index) => (
+                <div key={index}><img src={item}/></div>
+              ))
+            }
+          </ReactSwipe>:<div>数据获取中</div>
+        }
+
         <div className="dots">
           {
-            sliders.map((item, index) => (
+            this.props.sliders.map((item, index) => (
               <span className={this.state.index == index?"active":""} key={index}></span>
             ))
           }
