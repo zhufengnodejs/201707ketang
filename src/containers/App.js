@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import '../style/common.less'
 import {
   HashRouter as Router,
   Route,
