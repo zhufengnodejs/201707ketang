@@ -8,5 +8,26 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "connect-mongo": "^2.0.0",
+    "ejs": "^2.5.7",
+    "es6-promise": "^4.1.1",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "history": "^4.7.2",
+    "mongoose": "^4.12.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.6",
+    "react-swipe": "^5.1.0",
+    "react-transition-group": "^2.2.1",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "swipe-js-iso": "^2.0.4",
+    "whatwg-fetch": "^2.0.3"
+  }
 }
