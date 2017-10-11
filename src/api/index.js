@@ -1,6 +1,7 @@
 //向后台发送get请求，返回promise
+const HOST = 'http://localhost:3000';
 export const get = (url) => {
-  return fetch(url, {
+  return fetch(`${HOST}${url}`, {
     method: 'get',
     //默认跨域时为了安全，不携带cookie,加上此选项可以带上cookie
     credentials: 'include',
@@ -10,7 +11,7 @@ export const get = (url) => {
   }).then(res => res.json());
 }
 export const post = (url,body) => {
-  return fetch(url, {
+  return fetch(`${HOST}${url}`, {
     method: 'post',
     //默认跨域时为了安全，不携带cookie,加上此选项可以带上cookie
     credentials: 'include',

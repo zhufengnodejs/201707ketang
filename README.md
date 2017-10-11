@@ -97,3 +97,13 @@ module.exports = {
 对应一个页面
 - components
 
+## 引入redux
+- 创建仓库 - reducer(状态)
+- 连接组件 react-redux connect
+- 编写action-types 和 actions
+
+## 编写redux业务
+1. 增加一个动作类型 action type -  FETCH_SLIDERS
+2. 修改reducer,增加一个case  -  case types.FETCH_SLIDERS:
+3. 增加一个actions方法 - fetchSliders
+4.
