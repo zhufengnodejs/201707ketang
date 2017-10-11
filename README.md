@@ -91,3 +91,9 @@ module.exports = {
   ]
 }
 ```
+
+## 编写导航Tab页
+- containers
+对应一个页面
+- components
+
