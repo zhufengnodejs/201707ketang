@@ -5,7 +5,7 @@ import Carousel from "./Carousel/index";
 import {connect} from 'react-redux';
 import actions from '../../store/actions/home';
 import LessonList from "./LessonList/index";
-import {upLoadMore} from '../../utils';
+import {upLoadMore,downRefresh} from '../../utils';
 @connect(
   state => state.home,
   actions
@@ -20,6 +20,9 @@ export default class Home extends Component {
   //组件加载完成后
   componentDidMount(){
     upLoadMore(this.refs.container,this.loadMore);
+    downRefresh(this.refs.container,()=>{
+      console.log('downRefresh');
+    });
   }
   loadMore = ()=>{
     this.props.fetchLessons();
