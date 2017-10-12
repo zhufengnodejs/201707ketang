@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Route, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
-//<Protected path="/lesson" component={Lesson}/>
 @connect(
   state => state.session
 )
