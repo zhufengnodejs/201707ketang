@@ -25,6 +25,12 @@ export default class Register extends Component {
         <li><input ref="password" type="text" placeholder="密码"/></li>
         <li><Link to="/login">前往登录</Link></li>
         <li><button onClick={this.handleClick}>注&nbsp;册</button></li>
+        <li>
+          <div className="hint">
+            {this.props.success}
+            {this.props.error}
+          </div>
+        </li>
         <NavBar title ="注册"/>
       </ul>
     )

@@ -12,11 +12,11 @@ app.listen(3000);
 //获取真实的轮播图数据
 let sliders = require('./mock/sliders');
 let lessons = require('./mock/lessons');
-app.use(function (req, res, next) {
+/*app.use(function (req, res, next) {
   setTimeout(() => {
     next();
   }, 1000)
-});
+});*/
 app.use(function (req, res, next) {
   //如果客户端要向服务器发送cookie的话，绝不对写*
   res.header('Access-Control-Allow-Origin', "http://localhost:8080");
@@ -52,7 +52,7 @@ app.post('/login', function (req, res) {
   let oldUser = users.find(item => item.mobile == user.mobile && item.password == user.password);
   if(oldUser){
     req.session.user = user;//把用户写入会话对象中
-    res.json({code:0,success:'登录成功!'});
+    res.json({code:0,success:'登录成功!',user});
   }else{
     res.json({code:1,error:'登录失败!'});
   }
