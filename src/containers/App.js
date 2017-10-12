@@ -12,10 +12,14 @@ import Tab from "../components/Tab/index";
 import Detail from "./Detail/index";
 import Login from "./Login/index";
 import Register from "./Register/index";
+import { ConnectedRouter} from 'react-router-redux'
+import createHistory from 'history/createBrowserHistory'
+const history = createHistory()
+
 export default class App extends Component {
   render() {
     return (
-      <Router>
+      <ConnectedRouter history={history}>
         <div>
           <Switch>
             <Route exact path="/" component={Home}/>
@@ -27,7 +31,7 @@ export default class App extends Component {
           </Switch>
           <Tab/>
         </div>
-      </Router>
+      </ConnectedRouter>
     )
   }
 }

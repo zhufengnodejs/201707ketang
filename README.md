@@ -108,3 +108,10 @@ module.exports = {
 2. 修改reducer,增加一个case  -  case types.FETCH_SLIDERS:
 3. 增加一个actions方法 - fetchSliders
 4. 在组件里调用此action方法
+
+
+## react-router-redux
+1. 路由容器要改为 ConnectedRouter
+2. 创建仓库的时候要提供 routerMiddleware
+3. 增加 routerReducer
+4. 跳转路径
