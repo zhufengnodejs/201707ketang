@@ -10,6 +10,7 @@ import Lesson from "./Lesson/index";
 import Profile from "./Profile/index";
 import Tab from "../components/Tab/index";
 import Detail from "./Detail/index";
+import Login from "./Login/index";
 export default class App extends Component {
   render() {
     return (
@@ -20,6 +21,7 @@ export default class App extends Component {
             <Route path="/lesson" component={Lesson}/>
             <Route path="/profile" component={Profile}/>
             <Route path="/detail" component={Detail}/>
+            <Route path="/login" component={Login}/>
           </Switch>
           <Tab/>
         </div>
