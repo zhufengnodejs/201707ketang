@@ -111,7 +111,7 @@ module.exports = {
 
 
 ## react-router-redux
-1. 路由容器要改为 ConnectedRouter
-2. 创建仓库的时候要提供 routerMiddleware
-3. 增加 routerReducer
-4. 跳转路径
+1. App 路由容器要改为 ConnectedRouter
+2. Store 创建仓库的时候要提供 routerMiddleware
+3. reducer 增加 routerReducer
+4. action 跳转路径

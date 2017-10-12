@@ -20,7 +20,7 @@ app.use(function (req, res, next) {
 app.use(function (req, res, next) {
   //如果客户端要向服务器发送cookie的话，绝不对写*
   res.header('Access-Control-Allow-Origin', "http://localhost:8080");
-  res.header('Access-Control-Allow-Header', "Content-Type");
+  res.header('Access-Control-Allow-Headers', "Content-Type");
   res.header('Access-Control-Allow-Methods', "GET,POST,PUT,DELETE,OPTIONS");
   //允许跨域传cookie
   res.header('Access-Control-Allow-Credentials', "true");

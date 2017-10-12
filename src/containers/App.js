@@ -13,8 +13,8 @@ import Detail from "./Detail/index";
 import Login from "./Login/index";
 import Register from "./Register/index";
 import { ConnectedRouter} from 'react-router-redux'
-import createHistory from 'history/createBrowserHistory'
-const history = createHistory()
+import createHashHistory from 'history/createHashHistory'
+const history = createHashHistory()
 
 export default class App extends Component {
   render() {
