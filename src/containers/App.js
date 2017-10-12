@@ -11,6 +11,7 @@ import Profile from "./Profile/index";
 import Tab from "../components/Tab/index";
 import Detail from "./Detail/index";
 import Login from "./Login/index";
+import Register from "./Register/index";
 export default class App extends Component {
   render() {
     return (
@@ -22,6 +23,7 @@ export default class App extends Component {
             <Route path="/profile" component={Profile}/>
             <Route path="/detail" component={Detail}/>
             <Route path="/login" component={Login}/>
+            <Route path="/register" component={Register}/>
           </Switch>
           <Tab/>
         </div>
