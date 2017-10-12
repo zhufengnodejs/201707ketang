@@ -19,12 +19,15 @@ export function downRefresh(element, callback) {
   body.addEventListener('touchstart', touchStart);
   let startY;//开始触摸的纵坐标
   let touchDistance;//滑动的总距离
+  let backing = false;
   function touchStart(event) {
-    //取得的是这个点距离顶部的距离
-    startY = event.targetTouches[0].pageY;
-    touchDistance = 0;
-    body.addEventListener('touchmove', touchMove);
-    body.addEventListener('touchend', touchEnd);
+    if(!backing){
+      //取得的是这个点距离顶部的距离
+      startY = event.targetTouches[0].pageY;
+      touchDistance = 0;
+      body.addEventListener('touchmove', touchMove);
+      body.addEventListener('touchend', touchEnd);
+    }
     function touchMove(event) {
       let pageY = event.targetTouches[0].pageY;
       if (pageY > startY) {//下拉
@@ -36,10 +39,14 @@ export function downRefresh(element, callback) {
       }
     }
     function touchEnd(){
+      body.removeEventListener('touchmove', touchMove);
+      body.removeEventListener('touchend', touchEnd);
+      backing = true;
       let timer = setInterval(()=>{
         element.style.top = (element.offsetTop - 1)+'px';
         if(element.offsetTop == 56){
           clearInterval(timer);
+          backing = false;
         }
       },5);
       if(touchDistance>50)
