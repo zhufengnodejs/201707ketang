@@ -21,7 +21,7 @@ export function downRefresh(element, callback) {
   let touchDistance;//滑动的总距离
   let backing = false;
   function touchStart(event) {
-    if(!backing){
+    if(!backing && element.offsetTop == 56&& element.scrollTop==0){
       //取得的是这个点距离顶部的距离
       startY = event.targetTouches[0].pageY;
       touchDistance = 0;
