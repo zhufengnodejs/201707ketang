@@ -38,4 +38,10 @@ app.get('/lessons',function(req,res){
   }
   res.json(clonedLessons);
 });
+app.post('/login',function(req,res){
+
+});
+app.post('/register',function(req,res){
+
+});
 
