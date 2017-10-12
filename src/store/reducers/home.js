@@ -30,6 +30,14 @@ export default function (state = initState, action) {
         offset:state.lessons.offset + action.lessons.list.length,
         loading:false //加载完成
       }};
+    case types.REFRESH_LESSONS_SUCCESS://刷新数据获取完成
+      return {...state, lessons: {
+        ...state.lessons,
+        list:action.lessons.list,
+        hasMore:action.lessons.hasMore,
+        offset:0,
+        loading:false //加载完成
+      }};
     default:
       return state;
   }

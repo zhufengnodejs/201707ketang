@@ -20,9 +20,7 @@ export default class Home extends Component {
   //组件加载完成后
   componentDidMount(){
     upLoadMore(this.refs.container,this.loadMore);
-    downRefresh(this.refs.container,()=>{
-      console.log('downRefresh');
-    });
+    downRefresh(this.refs.container,this.props.refreshLessons);
   }
   loadMore = ()=>{
     this.props.fetchLessons();

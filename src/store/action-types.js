@@ -4,3 +4,5 @@ export const FETCH_SLIDERS = 'FETCH_SLIDERS';
 export const FETCH_LESSONS = 'FETCH_LESSONS';
 //获取首页课程列表数据完成
 export const FETCH_LESSONS_SUCCESS = 'FETCH_LESSONS_SUCCESS';
+//刷新首页课程列表数据完成
+export const REFRESH_LESSONS_SUCCESS = 'REFRESH_LESSONS_SUCCESS';

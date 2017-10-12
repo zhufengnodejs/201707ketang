@@ -40,14 +40,17 @@ export function downRefresh(element, callback) {
     function touchEnd(){
       body.removeEventListener('touchmove', touchMove);
       body.removeEventListener('touchend', touchEnd);
-      let timer = setInterval(()=>{
-        element.style.top = (element.offsetTop - 1)+'px';
-        if(element.offsetTop == 56){
-          clearInterval(timer);
-        }
-      },5);
-      if(touchDistance>50)
-        callback();
+      if(touchDistance>0){
+        let timer = setInterval(()=>{
+          element.style.top = (element.offsetTop - 1)+'px';
+          if(element.offsetTop == 56){
+            clearInterval(timer);
+          }
+        },5);
+        if(touchDistance>50)
+          callback();
+      }
+
     }
   }
 }
