@@ -20,15 +20,16 @@ export function downRefresh(element,callback) {
       if(touchY>touchStart){
         element.style.top = ((touchY - touchStart) + 56) + 'px';
         touchDistance = touchY - touchStart;
-        body.addEventListener('touchend', touchEnd);
       }else{
         body.removeEventListener('touchmove', touchMove);
+        body.removeEventListener('touchend', touchEnd);
       }
     };
     if (element.scrollTop == 0 && element.offsetTop == 56) {
       touchDistance = 0;
       touchStart = event.targetTouches[0].pageY;
       body.addEventListener('touchmove', touchMove)
+      body.addEventListener('touchend', touchEnd);
     }
   })
 

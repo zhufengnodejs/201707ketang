@@ -5,6 +5,11 @@ app.listen(3000);
 let sliders = require('./mock/sliders');
 let lessons = require('./mock/lessons');
 app.use(function(req,res,next){
+  setTimeout(()=>{
+    next();
+  },1000)
+});
+app.use(function(req,res,next){
   //如果客户端要向服务器发送cookie的话，绝不对写*
   res.header('Access-Control-Allow-Origin',"http://localhost:8080");
   res.header('Access-Control-Allow-Header',"Content-Type");
@@ -27,6 +32,9 @@ app.get('/lessons',function(req,res){
   for(let i=1;i<=list.length;i++){
     let lesson = list[i-1];
     lesson.name = (i+parseInt(offset))+'.'+lesson.name;
+  }
+  if(offset == 10){
+    clonedLessons.hasMore = false;
   }
   res.json(clonedLessons);
 });

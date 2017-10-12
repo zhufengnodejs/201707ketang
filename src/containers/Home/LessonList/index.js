@@ -18,9 +18,10 @@ export default class LessonList extends Component {
           ))
         }
         <li
-          onClick={this.props.loadMore}
           className="load-more">
-          加载更多
+          {
+            this.props.lessons.loading?<span>加载中...</span>:(this.props.lessons.hasMore?<span onClick={this.props.loadMore}>加载更多</span>:<span>别扯了，后面没了</span>)
+          }
         </li>
       </ul>
     )
