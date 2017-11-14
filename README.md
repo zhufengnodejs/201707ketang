@@ -1,3 +1,14 @@
+# 启动项目
+```
+git clone https://github.com/zhufengnodejs/201707ketang
+cd 201707ketang
+npm install
+cd server
+node server.js
+cd ..
+npm run dev
+```
+
 # 环境搭建
 ## 初始化项目
 ```
